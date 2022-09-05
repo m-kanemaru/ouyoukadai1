@@ -1,0 +1,12 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <% if @users.count == 0 %>
+        <h2 class="mt-3">Follow Users</h2>
+        <p>ユーザーはいません</p>
+    </div>
+    <% else %>
+      <%= render 'users/index', users: @users %>
+    <% end %>
+  </div>
+</div> 
