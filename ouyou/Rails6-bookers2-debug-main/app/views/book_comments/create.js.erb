@@ -1,0 +1,6 @@
+$("#comments-area").html("<%= j(render 'index', book: @book) %>");
+$("#new-comment").html("<%= j(render 'comment', book: @book,book_comment: @book_comment) %>");
+$("#comments-count").html("<%= j(render 'comment_count', book: @book) %>");
+
+$("text_area").val("");
+$("#text").val("");
