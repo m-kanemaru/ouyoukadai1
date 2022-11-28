@@ -21,6 +21,9 @@ class User < ApplicationRecord
   
   has_many :favorited_books, through: :favorites, source: :book
   
+  has_many :user_rooms
+  has_many :chats
+  
   def follow(user_id)
     relationships.create(followed_id: user_id)
   end
