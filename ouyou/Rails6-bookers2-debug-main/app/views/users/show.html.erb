@@ -6,12 +6,15 @@
       <h2 class="mt-3">New book</h2>
       <%= render 'books/form', book: @book %>
       <% if current_user != @user %>
-  <%= link_to 'chatを始める', chat_path(@user.id)%>
-<% end %>
+        <%= link_to 'chatを始める', chat_path(@user.id)%>
+      <% end %>
     </div>
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
       <%= render 'books/index',books: @books %>
+      <%#= current_user.books.where('created_at > ?', Date.today).count %>
+      <%#= current_user.books.where('created_at > ?', DateTime.yesterday).count %>
+      <%= render 'count', today_book: @today_book, yesterday_book: @yesterday_book,this_week_book: @this_week_book,last_week_book: @last_week_book %>
     </div>
   </div>
 </div>
