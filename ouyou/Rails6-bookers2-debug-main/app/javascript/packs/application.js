@@ -18,3 +18,9 @@ import "../stylesheets/application"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+// require("chartkick") // 追記
+// require("chart.js") // 追記
+
+import Chart from 'chart.js/auto';
+global.Chart = Chart;
