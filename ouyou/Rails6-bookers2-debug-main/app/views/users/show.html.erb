@@ -15,6 +15,7 @@
       <%#= current_user.books.where('created_at > ?', Date.today).count %>
       <%#= current_user.books.where('created_at > ?', DateTime.yesterday).count %>
       <%= render 'count', today_book: @today_book, yesterday_book: @yesterday_book,this_week_book: @this_week_book,last_week_book: @last_week_book %>
+      <%= render 'users/chart', books: @books %>
     </div>
   </div>
 </div>
