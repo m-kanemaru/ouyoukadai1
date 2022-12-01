@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show,:edit,:update]
   
   resources :users do
+    get "search", to: "users#search"
     resource :relationships, only: [:create, :destroy]
     member do
     get 'followings' => 'relationships#followings', as: 'followings'
