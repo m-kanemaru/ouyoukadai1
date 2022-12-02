@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show,:edit,:update]
   
   resources :users do
+    get "daily_posts" => "users#daily_posts"
     resource :relationships, only: [:create, :destroy]
     member do
     get 'followings' => 'relationships#followings', as: 'followings'
