@@ -30,6 +30,12 @@ class GroupsController < ApplicationController
     def edit
         @group = Group.find(params[:id])
     end
+    
+    def join
+        @group = Group.find(params[:group_id])
+        @group.users << current_user
+        redirect_to  groups_path
+    end
 
     def update
         if @group.update(group_params)
