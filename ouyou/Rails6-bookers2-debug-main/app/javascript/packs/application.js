@@ -24,3 +24,9 @@ ActiveStorage.start()
 
 import Chart from 'chart.js/auto';
 global.Chart = Chart;
+
+import $ from 'jquery';
+window.$ = $;
+window.jQuery = $;
+
+import "packs/raty"
