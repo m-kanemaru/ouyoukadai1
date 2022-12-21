@@ -25,8 +25,15 @@ ActiveStorage.start()
 import Chart from 'chart.js/auto';
 global.Chart = Chart;
 
-import $ from 'jquery';
-window.$ = $;
-window.jQuery = $;
+import jQuery from "jquery"
+import raty from 'raty-js'
 
-import "packs/raty"
+global.$ = jQuery;
+window.$ = jQuery;
+
+ import Raty from "raty.js"
+ window.raty = function(elem,opt){
+    let raty =  new Raty(elem,opt)
+    raty.init();
+    return raty;
+}
