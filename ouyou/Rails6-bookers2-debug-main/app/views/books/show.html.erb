@@ -24,24 +24,11 @@
            <%= render "book_comments/comment_count", book: @book %>
           </td>
           <td class="view-count">👀数: <%= @book_detail.view_counts.count %></td>
+          <td><%= render "static_rate", book: @book %></td>
           <% if @book.user == current_user %>
             <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
             <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%></td>
           <% end %>
-          <td>
-            <div id="star-rate<%= @book.id%>"></td>
-             <script>
-              $('#star-rate<%= @book.id %>').empty();
-              $('#star-rate<%= @book.id%>').raty({
-                 size      : 36,
-                 starOff   : '<%= asset_path('star-off.png') %>',
-                 starOn    : '<%= asset_path('star-on.png') %>',
-                 half      : false,
-                 readOnly: true,
-                 score: <%= @book.star %>,
-               });
-             </script>
-          </td>
         </tr>
       </table>
       <table>
